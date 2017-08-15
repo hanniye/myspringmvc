@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="  
+        http://www.springframework.org/schema/beans       
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+        http://www.springframework.org/schema/mvc  
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"> 
+
+    <bean id="toRegisterAction"
+         class="action.ToRegisterAction">
+    </bean>
+
+    <bean id="toLoginAction"
+         class="action.ToLoginAction">
+    </bean>
+
+    <bean id="loginform"
+         class="loginform.LoginForm">
+    </bean>
+    
+    <bean id="loginAction"
+        class="action.LoginAction">
+        <property name="commandClass" value="loginform.LoginForm"></property> 
+        <property name="failPage">
+            <value>loginFail</value>
+        </property>
+
+        <property name="successPage">
+            <value>loginSuccess</value>
+        </property>
+    </bean>
+    
+    <bean id="registerAction" 
+    class="action.RegisterAction"> 
+     <property name="commandClass" value="registerform.RegisterForm"></property> 
+
+    <property name="supage">
+    <value>registerSuccess</value>
+    </property>
+
+    <property name="fapage">
+     <value>registerFail</value>
+    </property>
+    </bean>
+    </beans>
