@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <center>
-    傻逼！登录失败了吧！
+    登录失败！
     <br/>
     倒数五秒等爆炸！<br/>
     别瞎几把乱登陆！<br/>
